@@ -14,15 +14,15 @@ on:
         - uses: actions/checkout@v4
           # ????Web????????????????
         - run: |
-          php -S localhost:8000 -t src &
-          sleep 3
+            php -S localhost:8000 -t src &
+            sleep 3
           # Composer???????????????????
         - uses: php-actions/composer@v6
           with:
-            php_version: '8.3'
+            php_version: '8.4'
             args: '--no-progress --prefer-dist'
           # PHPUnit???
         - uses: php-actions/phpunit@v3
           with:
-            php_version: '8.3'
+            php_version: '8.4'
             test_suffix: './tests/TodoTest.php'
